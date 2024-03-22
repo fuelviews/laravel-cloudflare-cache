@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Fuelviews\CloudflareCache\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Fuelviews\CloudflareCache\CloudflareCacheServiceProvider;
+use Illuminate\Encryption\Encrypter;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -12,25 +12,20 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            CloudflareCacheServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        config()->set('app.key', 'base64:'.base64_encode(Encrypter::generateKey(config()['app.cipher'])));
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
+        config()->set('cloudflare-cache.api_key', '');
+        config()->set('cloudflare-cache.identifier', '');
     }
 }
