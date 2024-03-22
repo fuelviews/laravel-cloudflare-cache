@@ -4,7 +4,10 @@
     "keywords": [
         "fuelviews",
         "laravel",
-        "laravel-cloudflare-cache"
+        "laravel-cloudflare-cache",
+        "cloudflare",
+        "cache",
+        "php"
     ],
     "homepage": "https://github.com/fuelviews/laravel-cloudflare-cache",
     "license": "MIT",
