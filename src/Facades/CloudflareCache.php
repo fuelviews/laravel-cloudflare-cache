@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Fuelviews\CloudflareCache\CloudflareCache
  *
- * @method static bool isActive()
  * @method static bool|string purgeEverything()
  */
 class CloudflareCache extends Facade
