@@ -6,7 +6,7 @@ return [
      *
      * @see https://dash.cloudflare.com/profile/api-tokens
      */
-    'api_key'    => env('CLOUDFLARE_CACHE_API_KEY'),
+    'api_key' => env('CLOUDFLARE_CACHE_API_KEY'),
 
     /**
      * The zone_id of your site on cloudflare dashboard.
@@ -16,5 +16,5 @@ return [
     /**
      * Debug mode.
      */
-    'debug'      => env('CLOUDFLARE_CACHE_DEBUG', false),
+    'debug' => env('CLOUDFLARE_CACHE_DEBUG', false),
 ];
