@@ -24,22 +24,23 @@ php artisan vendor:publish --tag="cloudflare-cache-config"
 This is the contents of the published config file:
 
 ```php
-<?php
-
 return [
     /**
-     * Generate global api key.
+     * Generate zone or global api key.
      *
      * @see https://dash.cloudflare.com/profile/api-tokens
      */
-    'api_key' => env('CLOUDFLARE_CACHE_KEY'),
+    'api_key'    => env('CLOUDFLARE_CACHE_API_KEY'),
 
     /**
-     * zone_id of your site on cloudflare dashboard.
+     * The zone_id of your site on cloudflare dashboard.
      */
-    'identifier' => env('CLOUDFLARE_CACHE_IDENTIFIER'),
+    'identifier' => env('CLOUDFLARE_CACHE_ZONE_ID'),
 
-    'debug' => env('CLOUDFLARE_CACHE_DEBUG', false),
+    /**
+     * Debug mode.
+     */
+    'debug'      => env('CLOUDFLARE_CACHE_DEBUG', false),
 ];
 
 ```
