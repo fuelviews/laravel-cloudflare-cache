@@ -2,8 +2,10 @@
 
 namespace Fuelviews\CloudflareCache\Commands;
 
+use Fuelviews\CloudflareCache\Exceptions\CloudflareCacheRequestException;
 use Fuelviews\CloudflareCache\Facades\CloudflareCache;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Command\Command as CommandAlias;
 
 class CloudflareCacheClearCommand extends Command
 {
@@ -20,10 +22,22 @@ class CloudflareCacheClearCommand extends Command
      * and posts and then either create a sitemap index to include them or
      * directly generate a single sitemap.
      */
-    public function handle(): bool
+    public function handle(): int
     {
-        CloudflareCache::purgeEverything();
+        try {
+            $result = CloudflareCache::purgeEverything();
 
-        return true;
+            if ($result === false) {
+                $this->error('Failed to purge Cloudflare cache.');
+
+                return CommandAlias::FAILURE;
+            }
+
+            return CommandAlias::SUCCESS;
+        } catch (CloudflareCacheRequestException $e) {
+            $this->error("Error purging Cloudflare cache: {$e->getMessage()}");
+
+            return CommandAlias::FAILURE;
+        }
     }
 }
