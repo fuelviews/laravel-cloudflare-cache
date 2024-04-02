@@ -46,10 +46,18 @@ return [
 
 ## Usage
 
-Purges everything
+Purge everything function with:
 
 ```php
-CloudflareCache::purgeEverything()
+use Fuelviews\CloudflareCache\Facades\CloudflareCache;
+
+CloudflareCache::purgeEverything();
+```
+
+Purge everything console command with:
+
+```bash
+php artisan cloudflare-cache:clear
 ```
 
 ## Testing

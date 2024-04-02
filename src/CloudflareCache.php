@@ -9,7 +9,7 @@ readonly class CloudflareCache implements CloudflareCacheInterface
 {
     public function __construct(private CloudflareServiceInterface $service)
     {
-        // .
+        //
     }
 
     /**
@@ -39,7 +39,7 @@ readonly class CloudflareCache implements CloudflareCacheInterface
         ]);
     }
 
-    public function isActive(): bool
+    public function ive(): bool
     {
         if (app()->runningUnitTests()) {
             return true;

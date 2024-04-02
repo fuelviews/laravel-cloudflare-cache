@@ -2,6 +2,7 @@
 
 namespace Fuelviews\CloudflareCache;
 
+use Fuelviews\CloudflareCache\Commands\CloudflareCacheClearCommand;
 use Fuelviews\CloudflareCache\Services\CloudflareService;
 use Fuelviews\CloudflareCache\Services\CloudflareServiceInterface;
 use Illuminate\Http\Client\Factory;
@@ -14,7 +15,9 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-cloudflare-cache')
-            ->hasConfigFile();
+            ->hasConfigFile()
+            ->hasCommand(CloudflareCacheClearCommand::class,
+            );
     }
 
     public function packageRegistered(): void
