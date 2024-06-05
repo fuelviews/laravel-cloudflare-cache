@@ -1,6 +1,6 @@
 {
     "name": "fuelviews/laravel-cloudflare-cache",
-    "description": "Cloudflare cache package",
+    "description": "Laravel cloudflare cache package",
     "keywords": [
         "fuelviews",
         "laravel",
@@ -20,6 +20,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.8",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
