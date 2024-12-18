@@ -57,23 +57,16 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        static $hasRun = false;
-
-        if ($hasRun) {
-            return;
-        }
-
-        $hasRun = true;
-
         if (app()->environment('development', 'production')) {
             if (class_exists(\RalphJSmit\Glide\Glide::class)) {
                 Artisan::call('glide:clear');
             }
 
-            Artisan::call('optimize:clear');
-            Artisan::call('optimize');
-            sleep(5);
-            Artisan::call('cloudflare-cache:clear');
+            if (array_key_exists('cloudflare-cache:clear', Artisan::all())) {
+                Artisan::call('cloudflare-cache:clear');
+            } else {
+                \Log::warning('Command "cloudflare-cache:clear" does not exist.');
+            }
         }
     }
 }
