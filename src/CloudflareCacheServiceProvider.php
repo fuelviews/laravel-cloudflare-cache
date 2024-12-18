@@ -55,7 +55,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
     }
 
-    public function packageBooted(): void
+    public function bootingPackage(): void
     {
         if (! app()->environment('local')) {
             if (file_exists(config_path('glide.php'))) {
