@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.6 - 2024-12-18
+
+### What's Changed
+
+* Added Artisan commands to clear cache and optimize in the CloudflareCacheServiceProvider's packageBooted method, excluding the commands in the local environment. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/17
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.5...v0.0.6
+
 ## v0.0.5 - 2024-12-18
 
 ### What's Changed
