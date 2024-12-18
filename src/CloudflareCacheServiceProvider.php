@@ -57,7 +57,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        if (!app()->environment('local')) {
+        if (! app()->environment('local')) {
             if (file_exists(config_path('glide.php'))) {
                 Artisan::call('glide:clear');
             }
