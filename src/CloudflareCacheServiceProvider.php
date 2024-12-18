@@ -57,7 +57,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if (!app()->environment('local')) {
+        if (! app()->environment('local')) {
             Artisan::call('optimize:clear');
             Artisan::call('cloudflare-cache:clear');
         }
