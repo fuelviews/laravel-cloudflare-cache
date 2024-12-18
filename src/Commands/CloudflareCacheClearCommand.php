@@ -33,6 +33,8 @@ class CloudflareCacheClearCommand extends Command
                 return CommandAlias::FAILURE;
             }
 
+            $this->info('Cloudflare cache successfully purged.');
+
             return CommandAlias::SUCCESS;
         } catch (CloudflareCacheRequestException $e) {
             $this->error("Error purging Cloudflare cache: {$e->getMessage()}");
