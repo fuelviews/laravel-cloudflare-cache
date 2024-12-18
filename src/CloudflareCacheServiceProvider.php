@@ -6,6 +6,7 @@ use Fuelviews\CloudflareCache\Commands\CloudflareCacheClearCommand;
 use Fuelviews\CloudflareCache\Services\CloudflareService;
 use Fuelviews\CloudflareCache\Services\CloudflareServiceInterface;
 use Illuminate\Http\Client\Factory;
+use Illuminate\Support\Facades\Artisan;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -52,5 +53,13 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         });
 
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
+    }
+
+    public function packageBooted()
+    {
+        if (!app()->environment('local')) {
+            Artisan::call('optimize:clear');
+            Artisan::call('cloudflare-cache:clear');
+        }
     }
 }

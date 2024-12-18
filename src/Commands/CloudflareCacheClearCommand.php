@@ -5,6 +5,7 @@ namespace Fuelviews\CloudflareCache\Commands;
 use Fuelviews\CloudflareCache\Exceptions\CloudflareCacheRequestException;
 use Fuelviews\CloudflareCache\Facades\CloudflareCache;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 
 class CloudflareCacheClearCommand extends Command
