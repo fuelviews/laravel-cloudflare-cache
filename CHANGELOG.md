@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.7 - 2024-12-18
+
+### What's Changed
+
+* Clear Cloudflare cache if the command exists, otherwise log a warning message. The changes were made to handle the case when the cloudflare-cache:clear command does not exist. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/20
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.6...v0.0.7
+
 ## v0.0.6 - 2024-12-18
 
 ### What's Changed
