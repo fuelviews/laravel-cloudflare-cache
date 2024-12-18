@@ -55,11 +55,19 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
     }
 
-    public function packageBooted()
+    public function packageBooted(): void
     {
-        if (! app()->environment('local')) {
-            Artisan::call('optimize:clear');
-            Artisan::call('cloudflare-cache:clear');
+        if (!app()->environment('local')) {
+            if (file_exists(config_path('glide.php'))) {
+                Artisan::call('glide:clear');
+            }
+
+            if (file_exists(config_path('cloudflare-cache.php'))) {
+                Artisan::call('optimize:clear');
+                Artisan::call('optimize');
+                sleep(5);
+                Artisan::call('cloudflare-cache:clear');
+            }
         }
     }
 }
