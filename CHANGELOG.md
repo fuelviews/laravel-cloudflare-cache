@@ -2,6 +2,17 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.5 - 2024-12-18
+
+### What's Changed
+
+* Bump anothrNick/github-tag-action from 1.69.0 to 1.71.0 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/12
+* Bump poseidon/wait-for-status-checks from 0.5.0 to 0.6.0 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/14
+* Bump poseidon/wait-for-status-checks from 0.5.0 to 0.6.0 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/15
+* Purged Cloudflare cache and added success message by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/16
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.4...v0.0.5
+
 ## v0.0.4 - 2024-06-14
 
 ### What's Changed
