@@ -55,7 +55,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
     }
 
-    public function packageBooted(): void
+    /*public function packageBooted(): void
     {
         if (app()->environment('development', 'production')) {
             if (class_exists(\RalphJSmit\Glide\Glide::class)) {
@@ -68,5 +68,5 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
                 \Log::warning('Command "cloudflare-cache:clear" does not exist.');
             }
         }
-    }
+    }*/
 }
