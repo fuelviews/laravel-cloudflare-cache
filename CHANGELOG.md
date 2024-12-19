@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.8 - 2024-12-19
+
+### What's Changed
+
+* Refactor CloudflareCacheServiceProvider packageBooted method. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/21
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.7...v0.0.8
+
 ## v0.0.7 - 2024-12-18
 
 ### What's Changed
