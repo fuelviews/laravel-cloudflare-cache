@@ -17,7 +17,8 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-cloudflare-cache')
             ->hasConfigFile()
-            ->hasCommand(CloudflareCacheClearCommand::class,
+            ->hasCommand(
+                CloudflareCacheClearCommand::class,
             );
     }
 
