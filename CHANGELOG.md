@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.9 - 2025-03-14
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/22
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/23
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.8...v0.0.9
+
 ## v0.0.8 - 2024-12-19
 
 ### What's Changed
