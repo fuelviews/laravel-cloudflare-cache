@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/fuelviews/laravel-cloudflare-cache.svg?style=flat-square)](https://packagist.org/packages/fuelviews/laravel-cloudflare-cache)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/fuelviews/laravel-cloudflare-cache/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/fuelviews/laravel-cloudflare-cache/actions/workflows/run-tests.yml?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/fuelviews/laravel-cloudflare-cache/fix-php-code-style-issues.yml?label=code%20style&style=flat-square)](https://github.com/fuelviews/laravel-cloudflare-cache/actions/workflows/php-cs-fixer.yml?query=workflow%3A%22%5C%22Fix%22)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/fuelviews/laravel-cloudflare-cache/fix-php-code-style-issues.yml?label=code%20style&style=flat-square)](https://github.com/fuelviews/laravel-cloudflare-cache/actions/workflows/php-cs-fixer.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/fuelviews/laravel-cloudflare-cache.svg?style=flat-square)](https://packagist.org/packages/fuelviews/laravel-cloudflare-cache)
 
 Laravel cloudflare cache package for laravel offers an efficient way to manage cloudflare's cache directly from your Laravel application, streamlining the purge process to ensure your content remains fresh.
