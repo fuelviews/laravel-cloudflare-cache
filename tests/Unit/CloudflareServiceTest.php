@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Http\Client\Request;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Facades\Http;
-use Fuelviews\CloudflareCache\CloudflareCache;
 use Fuelviews\CloudflareCache\CloudflareCacheInterface;
 use Fuelviews\CloudflareCache\Exceptions\CloudflareCacheRequestException;
 use Fuelviews\CloudflareCache\Services\CloudflareServiceInterface;
+use Illuminate\Http\Client\Request;
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Http;
 
 test('it posts to Cloudflare API correctly', function (): void {
     Http::fake();
@@ -33,8 +32,8 @@ test('it constructs correct base URL', function (): void {
     $mockFactory->shouldReceive('withHeaders')->andReturn($mockFactory);
     
     $service = new \Fuelviews\CloudflareCache\Services\CloudflareService(
-        $mockFactory, 
-        'test-api-key', 
+        $mockFactory,
+        'test-api-key',
         'test-zone-id'
     );
     
@@ -46,8 +45,8 @@ test('purgeEverything sends correct payload', function (): void {
     Http::fake([
         'https://api.cloudflare.com/client/v4/zones/*' => Http::response([
             'success' => true,
-            'result' => ['id' => 'request-id-123']
-        ], 200)
+            'result' => ['id' => 'request-id-123'],
+        ], 200),
     ]);
 
     $cloudflareCache = app()->make(CloudflareCacheInterface::class);
@@ -68,22 +67,22 @@ test('it throws exception on unsuccessful API response', function (): void {
             'errors' => [
                 [
                     'message' => 'Invalid API key',
-                    'code' => 1000
-                ]
-            ]
-        ], 403)
+                    'code' => 1000,
+                ],
+            ],
+        ], 403),
     ]);
     
     $cloudflareCache = app()->make(CloudflareCacheInterface::class);
     
-    expect(fn() => $cloudflareCache->purgeEverything())->toThrow(CloudflareCacheRequestException::class);
+    expect(fn () => $cloudflareCache->purgeEverything())->toThrow(CloudflareCacheRequestException::class);
 });
 
 test('it returns false when API response success is false', function (): void {
     Http::fake([
         'https://api.cloudflare.com/client/v4/zones/*' => Http::response([
-            'success' => false
-        ], 200)
+            'success' => false,
+        ], 200),
     ]);
     
     $cloudflareCache = app()->make(CloudflareCacheInterface::class);
@@ -102,7 +101,7 @@ test('ive method returns correctly based on environment', function (): void {
     config(['cloudflare-cache.api_key' => null]);
     config(['cloudflare-cache.identifier' => null]);
     config(['cloudflare-cache.debug' => false]);
-    $this->app->detectEnvironment(fn() => 'staging');
+    $this->app->detectEnvironment(fn () => 'staging');
     
     expect($cloudflareCache->ive())->toBeFalse();
     

@@ -72,5 +72,4 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
             }
         }
     }
-
 }

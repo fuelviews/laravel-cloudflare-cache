@@ -1,7 +1,6 @@
 <?php
 
 use Fuelviews\CloudflareCache\CloudflareCacheInterface;
-use Fuelviews\CloudflareCache\Commands\CloudflareCacheClearCommand;
 use Fuelviews\CloudflareCache\Exceptions\CloudflareCacheRequestException;
 use Illuminate\Console\Command;
 
