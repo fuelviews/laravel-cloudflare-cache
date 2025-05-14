@@ -11,7 +11,7 @@ class CloudflareCacheClearCommand extends Command
 {
     protected $signature = 'cloudflare-cache:clear';
 
-    protected $description = 'Cloudflare purge everything';
+    protected $description = 'Cloudflare cache purge everything';
 
     /**
      * Execute the console command.
@@ -36,8 +36,8 @@ class CloudflareCacheClearCommand extends Command
             $this->info('Cloudflare cache successfully purged.');
 
             return CommandAlias::SUCCESS;
-        } catch (CloudflareCacheRequestException $e) {
-            $this->error("Error purging Cloudflare cache: {$e->getMessage()}");
+        } catch (CloudflareCacheRequestException $cloudflareCacheRequestException) {
+            $this->error('Error purging Cloudflare cache: ' . $cloudflareCacheRequestException->getMessage());
 
             return CommandAlias::FAILURE;
         }

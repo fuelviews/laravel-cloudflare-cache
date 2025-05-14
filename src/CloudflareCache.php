@@ -7,7 +7,7 @@ use Fuelviews\CloudflareCache\Services\CloudflareServiceInterface;
 
 readonly class CloudflareCache implements CloudflareCacheInterface
 {
-    public function __construct(private CloudflareServiceInterface $service)
+    public function __construct(private CloudflareServiceInterface $cloudflareService)
     {
         //
     }
@@ -17,12 +17,12 @@ readonly class CloudflareCache implements CloudflareCacheInterface
      */
     protected function purge(array $options = []): bool|string
     {
-        $purgeRequest = $this->service->post('/purge_cache', $options);
+        $response = $this->cloudflareService->post('/purge_cache', $options);
 
-        $responseData = $purgeRequest->json();
+        $responseData = $response->json();
 
-        if (! $purgeRequest->successful()) {
-            throw CloudflareCacheRequestException::requestError($purgeRequest->status(), $responseData['errors'][0]['message'] ?? '-', $responseData['errors'][0]['code'] ?? null);
+        if (! $response->successful()) {
+            throw CloudflareCacheRequestException::requestError($response->status(), $responseData['errors'][0]['message'] ?? '-', $responseData['errors'][0]['code'] ?? null);
         }
 
         if (! ($responseData['success'] ?? false)) {
