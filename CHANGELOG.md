@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.11 - 2025-05-14
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/22
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/24
+* Fix tests workflow by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/26
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.8...v0.0.11
+
 ## v0.0.10 - 2025-05-14
 
 ### What's Changed
