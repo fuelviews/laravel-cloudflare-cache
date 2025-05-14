@@ -8,6 +8,7 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -21,7 +22,7 @@ class TestCase extends Orchestra
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app)
     {
         config()->set('app.key', 'base64:'.base64_encode(Encrypter::generateKey(config()['app.cipher'])));
 

@@ -15,8 +15,8 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-cloudflare-cache')
-            ->hasConfigFile()
+            ->name('cloudflare-cache')
+            ->hasConfigFile('cloudflare-cache')
             ->hasCommand(
                 CloudflareCacheClearCommand::class,
             );
@@ -34,7 +34,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
             return $app[Factory::class];
         });
 
-        $this->app->singleton(CloudflareServiceInterface::class, function ($app): CloudflareService {
+        $this->app->singleton(CloudflareServiceInterface::class, function ($app): \Fuelviews\CloudflareCache\Services\CloudflareServiceInterface {
             return new CloudflareService(
                 $app->make('cloudflare-cache.client'),
                 config('cloudflare-cache.api_key'),
@@ -47,7 +47,7 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
 
     public function registerCloudflareCache(): void
     {
-        $this->app->bind(CloudflareCacheInterface::class, function ($app): CloudflareCache {
+        $this->app->bind(CloudflareCacheInterface::class, function ($app): \Fuelviews\CloudflareCache\CloudflareCacheInterface {
             return new CloudflareCache(
                 $app->make(CloudflareServiceInterface::class)
             );
@@ -56,18 +56,21 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
     }
 
-    /*public function packageBooted(): void
+    public function packageBooted(): void
     {
         if (app()->environment('development', 'production')) {
             if (class_exists(\RalphJSmit\Glide\Glide::class)) {
-                Artisan::call('glide:clear');
+                dispatch(function () {
+                    Artisan::call('glide:clear');
+                })->delay(now()->addSeconds(30));
             }
 
             if (array_key_exists('cloudflare-cache:clear', Artisan::all())) {
-                Artisan::call('cloudflare-cache:clear');
-            } else {
-                \Log::warning('Command "cloudflare-cache:clear" does not exist.');
+                dispatch(function () {
+                    Artisan::call('cloudflare-cache:clear');
+                })->delay(now()->addSeconds(30));
             }
         }
-    }*/
+    }
+
 }

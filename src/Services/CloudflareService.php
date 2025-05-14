@@ -2,6 +2,7 @@
 
 namespace Fuelviews\CloudflareCache\Services;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Factory;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
@@ -9,7 +10,7 @@ use Illuminate\Http\Client\Response;
 readonly class CloudflareService implements CloudflareServiceInterface
 {
     public function __construct(
-        private Factory $client,
+        private Factory $factory,
         private ?string $apiKey,
         private ?string $identifier,
     ) {
@@ -19,7 +20,7 @@ readonly class CloudflareService implements CloudflareServiceInterface
     public function request(): PendingRequest
     {
         /** @noinspection PhpIncompatibleReturnTypeInspection */
-        return $this->client->withHeaders([
+        return $this->factory->withHeaders([
             'Authorization' => 'Bearer '.$this->apiKey,
             'Content-Type' => 'application/json',
         ]);
@@ -31,7 +32,8 @@ readonly class CloudflareService implements CloudflareServiceInterface
     }
 
     /**
-     * @param  string[]|array<string, bool>|string[][]  $data
+     * @param string[]|array<string, bool>|string[][] $data
+     * @throws ConnectionException
      */
     public function post(string $endpoint, array $data = []): Response
     {
