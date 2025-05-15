@@ -62,13 +62,13 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
             if (class_exists(\RalphJSmit\Glide\Glide::class)) {
                 dispatch(function () {
                     Artisan::call('glide:clear');
-                })->delay(now()->addSeconds(30));
+                })->delay(now()->addSeconds(60));
             }
 
             if (array_key_exists('cloudflare-cache:clear', Artisan::all())) {
                 dispatch(function () {
                     Artisan::call('cloudflare-cache:clear');
-                })->delay(now()->addSeconds(30));
+                })->delay(now()->addSeconds(60));
             }
         }
     }

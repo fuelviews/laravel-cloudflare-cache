@@ -13,15 +13,6 @@ class CloudflareCacheClearCommand extends Command
 
     protected $description = 'Cloudflare cache purge everything';
 
-    /**
-     * Execute the console command.
-     *
-     * This method handles the logic after the command is called. It decides
-     * whether to include an index in the sitemap based on configuration settings.
-     * Depending on those settings, it may generate individual sitemaps for pages
-     * and posts and then either create a sitemap index to include them or
-     * directly generate a single sitemap.
-     */
     public function handle(): int
     {
         try {
