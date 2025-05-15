@@ -2,25 +2,31 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v0.0.12 - 2025-05-15
+
+### What's Changed
+
+* Update GitHub Actions workflow to restrict permissions for pull requests and contents to read-only, enhancing security. Removed unnecessary configuration for GitHub token setup. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/27
+* Update the changelog to reflect recent changes, including version bumps and enhancements to the codebase. Adjust README badges for accuracy and improve the clarity of the Cloudflare cache command documentation. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/28
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.11...v0.0.12
+
 ## v0.0.11 - 2025-05-14
 
 ### What's Changed
 
-* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/22
-* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/24
 * Fix tests workflow by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/26
 
-**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.8...v0.0.11
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.10...v0.0.11
 
 ## v0.0.10 - 2025-05-14
 
 ### What's Changed
 
-* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/22
 * Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/fuelviews/laravel-cloudflare-cache/pull/24
 * Add PHP CS Fixer configuration and update .gitignore to include its cache file; update README badges to point to the correct workflows, and refactor code for improved clarity and consistency. Additionally, enhance tests for command execution and service provider registration. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/25
 
-**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.8...v0.0.10
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.9...v0.0.10
 
 ## v0.0.9 - 2025-03-14
 
