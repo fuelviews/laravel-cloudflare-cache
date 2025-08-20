@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v1.0.0 - 2025-08-20
+
+### What's Changed
+
+* Add comprehensive documentation and usage guide to README; introduce new artisan commands for status and validation checks; enhance service provider with install command and configuration validation; add tests for new commands and service provider setup. #major by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/33
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v0.0.12...v1.0.0
+
 ## v0.0.12 - 2025-05-15
 
 ### What's Changed
