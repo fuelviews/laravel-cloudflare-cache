@@ -4,6 +4,8 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/fuelviews/laravel-cloudflare-cache/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/fuelviews/laravel-cloudflare-cache/actions/workflows/run-tests.yml?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/fuelviews/laravel-cloudflare-cache/php-cs-fixer.yml?label=code%20style&style=flat-square)](https://github.com/fuelviews/laravel-cloudflare-cache/actions/workflows/php-cs-fixer.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/fuelviews/laravel-cloudflare-cache.svg?style=flat-square)](https://packagist.org/packages/fuelviews/laravel-cloudflare-cache)
+[![PHP Version](https://img.shields.io/badge/PHP-^8.3-blue.svg?style=flat-square)](https://php.net)
+[![Laravel Version](https://img.shields.io/badge/Laravel-^10|^11|^12-red.svg?style=flat-square)](https://laravel.com)
 
 A powerful and intuitive Laravel package for managing Cloudflare cache purging directly from your Laravel application. Streamline your cache management workflow with comprehensive commands, validation, and seamless integration.
 
