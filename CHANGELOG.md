@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v1.0.1 - 2025-08-20
+
+### What's Changed
+
+* Add text and diff attributes to .gitattributes for better merge handling and export-ignore settings; update .gitignore to exclude additional files and directories; add PHP and Laravel version badges to README; remove unnecessary migration prompt during package installation. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/34
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2025-08-20
 
 ### What's Changed

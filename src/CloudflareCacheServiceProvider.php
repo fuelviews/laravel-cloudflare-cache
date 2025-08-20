@@ -30,7 +30,6 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
                         $command->info('This package helps you purge Cloudflare cache from your Laravel application.');
                     })
                     ->publishConfigFile()
-                    ->askToRunMigrations()
                     ->endWith(function (InstallCommand $command) {
                         $command->info('');
                         $command->info('🎉 Laravel Cloudflare Cache has been installed successfully!');
