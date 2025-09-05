@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-cloudflare-cache` will be documented in this file.
 
+## v1.0.2 - 2025-09-05
+
+### What's Changed
+
+* Remove configuration validation logic from CloudflareCacheServiceProvider to simplify service provider and avoid environment-specific checks. by @thejmitchener in https://github.com/fuelviews/laravel-cloudflare-cache/pull/35
+
+**Full Changelog**: https://github.com/fuelviews/laravel-cloudflare-cache/compare/v1.0.1...v1.0.2
+
 ## v1.0.1 - 2025-08-20
 
 ### What's Changed

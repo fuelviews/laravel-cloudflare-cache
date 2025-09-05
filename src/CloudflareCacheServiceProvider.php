@@ -84,35 +84,4 @@ class CloudflareCacheServiceProvider extends PackageServiceProvider
 
         $this->app->alias(CloudflareCacheInterface::class, 'cloudflare-cache');
     }
-
-    public function packageBooted(): void
-    {
-        $this->validateConfiguration();
-    }
-
-    protected function validateConfiguration(): void
-    {
-        if (app()->environment('local', 'testing')) {
-            $apiKey = config('cloudflare-cache.api_key');
-            $zoneId = config('cloudflare-cache.identifier');
-
-            if (empty($apiKey)) {
-                report(new \InvalidArgumentException(
-                    'Cloudflare Cache API key is not configured. Set CLOUDFLARE_CACHE_API_KEY in your .env file.'
-                ));
-            }
-
-            if (empty($zoneId)) {
-                report(new \InvalidArgumentException(
-                    'Cloudflare Cache zone ID is not configured. Set CLOUDFLARE_CACHE_ZONE_ID in your .env file.'
-                ));
-            }
-
-            if (! empty($zoneId) && ! preg_match('/^[a-f0-9]{32}$/', $zoneId)) {
-                report(new \InvalidArgumentException(
-                    'Cloudflare Cache zone ID format appears invalid. Should be a 32-character hexadecimal string.'
-                ));
-            }
-        }
-    }
 }
